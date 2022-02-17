@@ -1,34 +1,44 @@
 # Crack detection using OpenCV
 
 ### Abstract
-It has been seen that millions of dollars are being invested on highway/subway tunnel maintainance and restoration all over the world. This cost can be minimized if the detection of cracks will be found as earlier as possible. As the reparation process depends on the type of cracks, so we need to take actions for next steps how it would be repaired. It would be a very good decision to repair the cracks as earliar we find it. Initially we need to capture very transperant images of the roads/concrete infrastuctures. Cause detections will depend on that images. So any device that will be used to scan or capture images of the roads/concrete infrastuctures, that must be configured for picturing high resolution images. On those images, various image processing techniques are applied to extract crack information. Depending on these information, the images could be classified using some decision making algorithm. This procedure can be implemented on images acquired by any objects or vehicles carrying image sensing terminal, laser distance sensor, image storage and processing servers, central control system and speed sensor. The accuracy depends on the images quality and accurate capture.
+Construction industury is behind the technologies improvement comparing to the other sectors. However, automatization in construction sector will got effected in a possitive way especially in terms of safety, time/cost efficiency and improvement of maintenance industry. 
+Regarding this factor creating safer environment especially in bridge or high rise building construction which put employee in a risky stuation is our aim. 
+
+Lastly, our aim is making maintenance more efficient. In germany, %70 of construction activites are belongs to the maintenance. It's a huge area that we should improve.
+
 
 ### Introduction
-Whenever we travel what we need at first is road safety. So if we can confirm that conditions of our highway is okay, then accidents will be decreased automatically. Since the highways are built, it can be seen the cracks or holes in the asphalt/concrete surface. As soon as we repair our cracks, our journey will be safe for sure. Most of cases the accidents happen due to the poor condition of the road.
+When we need to repair the building, we need some information and analysis. Traditionally, this information is collected based on observation in place. However, it is a huge risk for employee. Moreover, If there is not a problem controlling process will put employees in a risk without reason. Additionally, this process need investment, equipment and engineer to control and organize process.
+Based on these factors, our ultimate goal is to develop a system that can be able to detect these cracks on the bridge or high rise building automatically.
 
-In very modern countries, they have thousands of kilometers highways. It's very difficult to inspect these roads by manpower. So an efficient automatic detection of the road condition can be developed for making them safe.
-
-These cracks of the highways can be classified into some types. Depending on those cracks, authority must take actions how those would have to repair. Initially it may need to detect the location of the cracks. To perform that, a visual inspection technique is needed to capture images of the roads and then to be analyzed.
-
-So our ultimate goal is to develop a system that can be able to detect these cracks on the highways automatically.
 
 ### Methodology
 Here the crack detection methodology can be classified into some following steps below:
 1. Image capture
-2. Image processing
-3. Image Segmention
-4. Feature extraction
+2. Feature extraction
+3. Image processing with permutations
+4. Image Segmention
+5. Comparing to the Results
 
 #### Image capture
-Any device can be installed on a vehicle zenith point or in a pole that is capable of capturing high resoluted imgaes of higways from any angle but focus should be perfect. If needed then the original images could be resized. Here are some examples of images on which we are going to detect cracks.
+In a risky situation we offer using drone.
 
 <img src="Input-Set/Cracked_01.jpg" width="400" height="250"> <img src="Input-Set/Cracked_07.jpg" width="400" height="250">
+
+#### Image Evaluation techniques
+Evaluation of brightness, sharpness, contrast and image size 
+
+#### Permutations
+It is not possible to run only one code for all crack photos. This process try different values in filters based on evaluation results.
 
 #### Image processing techniques
 All the steps in the processing section are being explained below. 
 
+##### Contrast Enhancer
+Makes cracks more visible
+
 ##### Gray scaling and averaging
-Firstly, the images is transformed in a new one in grayscale and blur. These make the images easier to visualize the processed images in next steps. 
+The images is transformed in a new one in grayscale and blur. These make the images easier to visualize the processed images in next steps. 
 
 <img src="Processed-Set/blur-1.jpg" width="400" height="250"> <img src="Processed-Set/blur-7.jpg" width="400" height="250">
 <pre>              Blurred Image                                           Blurred Image</pre>
@@ -77,8 +87,11 @@ So after applying this ORB method into our morphological closing images we get t
 <img src="Output-Set/CrackDetected-1.jpg" width="400" height="250"> <img src="Output-Set/CrackDetected-7.jpg" width="400" height="250">
 <pre>           Feature Detected Image                              Feature Detected Image</pre>
 
+### Comparison
+Process has resulted with too many output in wide range. To pick the best compatible result, we compare the results with the original image based on SSIM (Structural Similarity Index) and MSE(Mean Square Error) value.
+
 ### Result and discussion
-Here we tried with around twenty images of both crack and non-crack to test. Without some cases, the cracks become very visible accurately in our output image. So we can say that 80-90% accuracy can be possible if the images are very clear or transparent. From our final output images we can classify them into several crack types and some classification techniques need to be applied for that.
+Here we tried with around twenty images of both crack and non-crack to test. Without some cases, the cracks become very visible accurately in our output image. We added permutations and comparison step to improve accuracy.
 
 ### References
 1. M Ann, P Johnson, Best Practices Handbook on asphalt pavement maintenance.Minnesota Technology Transfer (T2) Center / LTAP Program (2000). http://www.cee.mtu.edu/~balkire/CE5403/AsphaltPaveMaint.pdf.
