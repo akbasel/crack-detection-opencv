@@ -1,7 +1,7 @@
 # Crack detection using OpenCV
 
 ### Abstract
-Construction industury is behind the technologies improvement comparing to the other sectors. However, automatization in construction sector will got effected in a possitive way especially in terms of safety, time/cost efficiency and improvement of maintenance industry. 
+Construction industury is behind the advance technologies comparing to the other sectors. However, automatization in construction sector will got effected in a possitive way especially in terms of safety, time/cost efficiency and improvement of maintenance industry. 
 Regarding this factor creating safer environment especially in bridge or high rise building construction which put employee in a risky stuation is our aim. 
 
 Lastly, our aim is making maintenance more efficient. In germany, %70 of construction activites are belongs to the maintenance. It's a huge area that we should improve.
